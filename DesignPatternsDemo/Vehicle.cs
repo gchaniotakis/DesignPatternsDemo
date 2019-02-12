@@ -8,9 +8,18 @@ namespace DesignPatternsDemo
 {
     public class Vehicle
     {
+        private Location _location;
         public string Id { get; }
 
-        public Location Location { get; set; }
+        public Location Location
+        {
+            get { return _location; }
+            set
+            {
+                _location = value;
+                OnLocationChanged();
+            }
+        }
 
         public Vehicle (string id)
         {
