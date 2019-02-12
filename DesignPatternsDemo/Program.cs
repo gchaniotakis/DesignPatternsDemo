@@ -17,6 +17,8 @@ namespace DesignPatternsDemo
             myCar.LocationChanged += MyCarOnLocationChanged;
             myCar.Location = new Location(10, 10);
 
+            fleetmanager.RemoveVehicle(myCar.Id);
+
             var myOtherCar = new Vehicle("BA-4321");
             myOtherCar.Location = new Location(-20, 10);
             myOtherCar.LocationChanged += MyCarOnLocationChanged;
