@@ -11,15 +11,25 @@ namespace DesignPatternsDemo
         static void Main(string[] args)
         {
             var myCar = new Vehicle("AB-1234");
-            myCar.LocationChanged += MyCarOnLocationChanged;
-            myCar.LocationChanged += PrintCar;
-            myCar.Location = new Location(28, 32);
-            myCar.Location = new Location(28, 32);
-            myCar.Location = new Location(30, 32);
-            myCar.Location = null;
-
             var fleetmanager = new FleetManager(new Location(0, 0));
             fleetmanager.AddVehicle(myCar);
+            
+            myCar.LocationChanged += MyCarOnLocationChanged;
+            myCar.Location = new Location(10, 10);
+
+            var myOtherCar = new Vehicle("BA-4321");
+            myOtherCar.Location = new Location(-20, 10);
+            myOtherCar.LocationChanged += MyCarOnLocationChanged;
+            fleetmanager.AddVehicle(myOtherCar);
+
+            for (double i = myCar.Location.Latitude; i>=0; i--)
+            {
+                myCar.Location = new Location(i, i);
+            }
+
+
+
+
 
 
             Console.ReadKey();
