@@ -16,9 +16,13 @@ namespace DesignPatternsDemo
             get { return _location; }
             set
             {
-                _location = value;
-                OnLocationChanged();
+                if (value != null && !value.Equals(Location))
+                {
+                    _location = value;
+                    OnLocationChanged();
+                }
             }
+
         }
 
         public Vehicle (string id)

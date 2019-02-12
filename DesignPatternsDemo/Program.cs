@@ -14,7 +14,9 @@ namespace DesignPatternsDemo
             myCar.LocationChanged += MyCarOnLocationChanged;
             myCar.LocationChanged += PrintCar;
             myCar.Location = new Location(28, 32);
+            myCar.Location = new Location(28, 32);
             myCar.Location = new Location(30, 32);
+            myCar.Location = null;
 
             Console.ReadKey();
         }
