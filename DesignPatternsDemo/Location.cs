@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesignPatternsDemo.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,13 +17,13 @@ namespace DesignPatternsDemo
         {
             if (latitude > 90 || latitude < -90)
             {
-                throw new CoordinateOutOfRangeException("Latitude is out of range");
+                throw new CoordinateOufOfRangeException("Latitude is out of range");
             }
             Latitude = latitude;
 
             if (longtitude > 180 || longtitude < -180)
             {
-                throw new CoordinateOutOfRangeException("Longtitude is out of range")l
+                throw new CoordinateOufOfRangeException("Longtitude is out of range")l
             }
             Longtitude = longtitude;
         }
