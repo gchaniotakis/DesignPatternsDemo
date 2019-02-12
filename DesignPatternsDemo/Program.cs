@@ -18,7 +18,8 @@ namespace DesignPatternsDemo
             myCar.Location = new Location(30, 32);
             myCar.Location = null;
 
-            var fleetmanager = new FleetManager(Location(0, 0));
+            var fleetmanager = new FleetManager(new Location(0, 0));
+            fleetmanager.AddVehicle(myCar);
 
 
             Console.ReadKey();
