@@ -15,7 +15,7 @@ namespace DesignPatternsDemo.Events
         }
         public CoordinateOufOfRangeException(string message) : base(message)
         {
-            Console.WriteLine("This is an invalid coordinate");
+            
         }
 
         public CoordinateOufOfRangeException(string message, Exception innerException) : base (message, innerException)

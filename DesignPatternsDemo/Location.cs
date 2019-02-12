@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatternsDemo
 {
-    public class Location
+    public class Location : IEquatable<Location>
     {
         public double Latitude { get; }
 
@@ -19,13 +19,33 @@ namespace DesignPatternsDemo
             {
                 throw new CoordinateOufOfRangeException("Latitude is out of range");
             }
-            Latitude = latitude;
+            
 
             if (longtitude > 180 || longtitude < -180)
             {
-                throw new CoordinateOufOfRangeException("Longtitude is out of range")l
+                throw new CoordinateOufOfRangeException("Longtitude is out of range");
             }
+
+            Latitude = latitude;
             Longtitude = longtitude;
         }
+
+        public bool Equals(Location other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            return (Math.Abs(Latitude - other.Latitude) < 1e-6 &&
+                    Math.Abs(Longtitude - other.Longtitude) < 1e-6);
+
+        }
+
     }
 }
