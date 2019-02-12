@@ -29,7 +29,11 @@ namespace DesignPatternsDemo
                 myCar.Location = new Location(i, i);
             }
 
-
+            for (int step = 0; step < 50; step++)
+            {
+                myCar.Location = new Location(myCar.Location.Latitude -1, myCar.Location.Longtitude -1);
+                myOtherCar.Location = new Location(myOtherCar.Location.Latitude +2, myOtherCar.Location.Longtitude -1);
+            }
 
 
 
@@ -46,7 +50,7 @@ namespace DesignPatternsDemo
         private static void MyCarOnLocationChanged(object sender, EventArgs e)
         {
             var car = sender as Vehicle;
-            Console.WriteLine($"The location of the car {car.Id}is {car.Location}");
+            Console.WriteLine($"The location of the car {car.Id} is {car.Location}");
         }
 
             
